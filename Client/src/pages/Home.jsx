@@ -6,6 +6,8 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import { Testimonials } from "../components/Testimonials";
 import OurProcess from "../components/OurProcess";
 import { LetsTalk } from "../components/LetsTalk";
+import Footer from "../components/footer";
+import OurWork from "../components/OurWorks";
 
 const Home = () => {
   const testimonialsData = [
@@ -35,9 +37,11 @@ const Home = () => {
       <AboutUs />
       <WhatWeDo />
       <WhyChooseUs />
+      <OurWork/>
       <Testimonials testimonials={testimonialsData} autoplay={true} />
       <OurProcess/>
       <LetsTalk/>
+      <Footer/>
     </div>
   );
 };
