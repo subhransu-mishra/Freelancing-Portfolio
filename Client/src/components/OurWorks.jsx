@@ -106,7 +106,7 @@ export default function OurWork() {
   };
 
   return (
-    <div className="relative bg-gray-900 py-20 px-4 md:px-8 overflow-hidden">
+    <div className="relative bg-gray-900 py-20 px-4 md:px-8 overflow-hidden" id='services'>
       {/* Custom cursor */}
       <div 
         ref={cursorRef}
@@ -139,7 +139,7 @@ export default function OurWork() {
             <button
               key={index}
               onClick={() => handleProjectChange(index)}
-              className={`px-5 py-3 rounded-full transition-all duration-300 font-medium text-sm md:text-base ${
+              className={`px-5 py-3 rounded-full cursor-pointer transition-all duration-300 font-medium text-sm md:text-base ${
                 activeProject === index 
                   ? `bg-gradient-to-r ${project.color} text-white shadow-lg` 
                   : 'bg-gray-800 text-gray-400 hover:bg-gray-700'

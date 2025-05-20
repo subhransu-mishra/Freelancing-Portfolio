@@ -49,7 +49,7 @@ const WhatWeDo = () => {
   };
 
   return (
-    <section className="min-h-screen bg-black py-20 px-4 lg:px-0">
+    <section className="min-h-screen bg-black py-20 px-4 lg:px-0" id="services">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}

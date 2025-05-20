@@ -237,7 +237,7 @@ const WhyChooseUs = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-bold text-white transition-all duration-300 shadow-lg shadow-purple-500/20 relative overflow-hidden group"
+            className="cursor-pointer px-8 py-3.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl font-bold text-white transition-all duration-300 shadow-lg shadow-purple-500/20 relative overflow-hidden group"
           >
             <span className="relative z-10">Start Your Project</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

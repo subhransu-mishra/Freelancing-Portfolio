@@ -100,7 +100,7 @@ export default function OurProcess() {
   };
 
   return (
-    <div className="bg-gray-900 text-gray-100 py-20 px-4 md:px-8">
+    <div className="bg-gray-900 text-gray-100 py-20 px-4 md:px-8" id="ourprocess">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -167,7 +167,7 @@ export default function OurProcess() {
               <motion.button
                 key={step.id}
                 onClick={() => setActiveStep(step.id)}
-                className={`px-4 py-3 whitespace-nowrap font-medium text-sm snap-start ${
+                className={`px-4 py-3 cursor-pointer whitespace-nowrap font-medium text-sm snap-start ${
                   activeStep === step.id
                     ? "text-white border-b-2 border-purple-500"
                     : "text-gray-400"
@@ -226,7 +226,7 @@ export default function OurProcess() {
             <motion.button
               onClick={() => setActiveStep((prev) => Math.max(0, prev - 1))}
               disabled={activeStep === 0}
-              className={`px-4 py-2 rounded-lg transition-all ${
+              className={`px-4 cursor-pointer py-2 rounded-lg transition-all ${
                 activeStep === 0
                   ? "text-gray-500 cursor-not-allowed"
                   : "text-white hover:bg-gray-700"
@@ -242,7 +242,7 @@ export default function OurProcess() {
                 <motion.button
                   key={step.id}
                   onClick={() => setActiveStep(step.id)}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-2 cursor-pointer rounded-full transition-all ${
                     activeStep === step.id
                       ? `bg-gradient-to-r ${step.color} w-6`
                       : "bg-gray-600 w-2"
@@ -258,7 +258,7 @@ export default function OurProcess() {
                 setActiveStep((prev) => Math.min(steps.length - 1, prev + 1))
               }
               disabled={activeStep === steps.length - 1}
-              className={`px-4 py-2 rounded-lg transition-all ${
+              className={`px-4 cursor-pointer py-2 rounded-lg transition-all ${
                 activeStep === steps.length - 1
                   ? "text-gray-500 cursor-not-allowed"
                   : "text-white hover:bg-gray-700"

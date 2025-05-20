@@ -48,7 +48,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden" id="home">
       {/* Background grid effect */}
       <div className="absolute inset-0 z-0 opacity-40">
         <div className="w-full h-full grid grid-cols-12 grid-rows-12">
@@ -163,7 +163,7 @@ export default function HeroSection() {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span className="ml-2 text-xl font-bold text-white">XenCo</span>
+            <span className="ml-2 text-xl font-bold text-white">WebNexity</span>
           </div>
 
           {/* Desktop Menu */}
@@ -180,7 +180,7 @@ export default function HeroSection() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-8 py-2.5 rounded-full text-sm transition-all duration-300 overflow-hidden"
+              className="cursor-pointer relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-8 py-2.5 rounded-full text-sm transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10 flex items-center">
                 <span className="mr-2">Let's Chat</span>
@@ -193,7 +193,7 @@ export default function HeroSection() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white z-50 relative"
+            className="md:hidden text-white z-50 relative cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
@@ -266,14 +266,14 @@ export default function HeroSection() {
           className="text-lg md:text-xl text-white/80 max-w-xl mx-auto mb-12 animate-fadeIn"
           style={{ animationDelay: "0.3s" }}
         >
-          For <span className="bg-white/20 px-2 py-1 rounded-md">15 years</span>{" "}
+          For <span className="bg-white/20 px-2 py-1 rounded-md">5 years</span>{" "}
           we're bringing first class apps to our clients
         </p>
 
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium flex items-center transition-all duration-300 animate-fadeIn shadow-lg shadow-purple-500/30"
+          className="cursor-pointer bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium flex items-center transition-all duration-300 animate-fadeIn shadow-lg shadow-purple-500/30"
           style={{ animationDelay: "0.6s" }}
         >
           <span className="mr-2">Get Started</span>

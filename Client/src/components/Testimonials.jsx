@@ -99,13 +99,13 @@ export const Testimonials = ({ testimonials = [], autoplay = false }) => {
                     <div className="flex gap-4">
                       <button
                         onClick={handlePrev}
-                        className="group/button flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors duration-300"
+                        className="group/button flex cursor-pointer h-12 w-12 items-center justify-center rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors duration-300"
                       >
                         <IconArrowLeft className="h-6 w-6 text-white transition-transform duration-300 group-hover/button:-translate-x-1" />
                       </button>
                       <button
                         onClick={handleNext}
-                        className="group/button flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors duration-300"
+                        className="group/button flex cursor-pointer h-12 w-12 items-center justify-center rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors duration-300"
                       >
                         <IconArrowRight className="h-6 w-6 text-white transition-transform duration-300 group-hover/button:translate-x-1" />
                       </button>

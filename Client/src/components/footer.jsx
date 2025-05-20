@@ -27,13 +27,12 @@ export default function Footer() {
   };
 
   const mainLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Services', href: '#' },
-    { name: 'Portfolio', href: '#' },
-    { name: 'Process', href: '#' },
-    { name: 'About Us', href: '#' },
-    { name: 'Careers', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Home', href: '#home' },
+    { name: 'Services', href: '#services' },
+    { name: 'Our works', href: '#services' },
+    { name: 'Process', href: '#ourprocess' },
+    { name: 'About Us', href: '#about-us-section' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const serviceLinks = [
