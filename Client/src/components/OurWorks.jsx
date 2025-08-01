@@ -22,8 +22,8 @@ export default function OurWork() {
       title: "SeaSand Properties",
       subtitle: "Real Estate Website",
       description: "A premium property listing platform featuring advanced search functionality, virtual tours, and a seamless booking system for property viewings.",
-      image: "/api/placeholder/800/500",
-      mobileImage: "/api/placeholder/400/800",
+      image: "/seasand-pic-1.png",
+      mobileImage: "/seasand-pic-2.png",
       color: "from-blue-500 to-cyan-400",
       services: ["UI/UX Design", "Web Development", "CMS Integration", "SEO Optimization"],
       features: [
@@ -35,16 +35,16 @@ export default function OurWork() {
         "Agent dashboards"
       ],
       technologies: ["React", "Node.js", "MongoDB", "Google Maps API", "AWS"],
-      link: "#",
-      year: "2024"
+      link: "https://seasandproperties.in/",
+      year: "2025"
     },
     {
       id: 1,
       title: "Urban Bites",
       subtitle: "Bar & Cafe Platform",
       description: "A comprehensive digital solution featuring online menu browsing, table reservations, and a seamless food delivery system, enhancing the dining experience.",
-      image: "/api/placeholder/800/500",
-      mobileImage: "/api/placeholder/400/800",
+      image: "/resturant-pic-1.png",
+      mobileImage: "/resturant-pic-2.png",
       color: "from-amber-500 to-red-500",
       services: ["UI/UX Design", "Web & Mobile Development", "Payment Integration", "Order Management System"],
       features: [
@@ -56,7 +56,7 @@ export default function OurWork() {
         "Event calendar"
       ],
       technologies: ["React Native", "Firebase", "Stripe", "NodeJS", "Google Services"],
-      link: "#",
+      link: "https://rainyroof.vercel.app/",
       year: "2023"
     },
     {
@@ -64,8 +64,8 @@ export default function OurWork() {
       title: "LearnSphere",
       subtitle: "Educational Institute Platform",
       description: "An innovative learning management system with course enrollment, live virtual classrooms, progress tracking, and comprehensive assessment tools.",
-      image: "/api/placeholder/800/500",
-      mobileImage: "/api/placeholder/400/800",
+      image: "/edu-pic-1.png",
+      mobileImage: "/edu-pic-2.png",
       color: "from-purple-500 to-indigo-500",
       services: ["UI/UX Design", "Web Development", "LMS Implementation", "Content Management"],
       features: [
@@ -77,8 +77,8 @@ export default function OurWork() {
         "Resource library"
       ],
       technologies: ["React", "Django", "PostgreSQL", "WebRTC", "AWS"],
-      link: "#",
-      year: "2024"
+      link: "https://ranitmanik.github.io/College-Website/",
+      year: "2023"
     }
   ];
 
