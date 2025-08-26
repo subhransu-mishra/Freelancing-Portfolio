@@ -58,7 +58,7 @@ const WhatWeDo = () => {
           className="text-center mb-20"
         >
           <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
-            What We Do
+            What We Do for You
           </h2>
           <p className="text-gray-400 text-xl">
             Crafting digital excellence through innovative solutions

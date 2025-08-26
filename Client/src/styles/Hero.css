@@ -65,3 +65,108 @@
   background-size: 200% 200%;
   animation: gradient 15s ease infinite;
 }
+
+/* Dynamic Island Styling */
+.dynamic-island {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 80%;
+  max-width: 900px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dynamic-island.scrolled {
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dynamic-island.always-expanded {
+  width: 80%;
+  max-width: 900px;
+}
+
+.dynamic-island-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Pulse effect when notification arrives */
+@keyframes island-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.island-notification {
+  animation: island-pulse 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .dynamic-island {
+    width: auto;
+    min-width: 250px; /* Increased min-width further */
+    max-width: 95%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0 0.75rem; /* Increased horizontal padding */
+  }
+
+  .dynamic-island.always-expanded {
+    width: auto;
+    min-width: 250px;
+  }
+
+  .dynamic-island-content {
+    padding: 0 0.5rem; /* Added inner padding */
+  }
+
+  /* Add more space between logo and menu button */
+  .dynamic-island-content > div {
+    justify-content: space-between;
+    padding: 0 0.5rem;
+  }
+
+  /* Push menu button further right */
+  .dynamic-island-content button.md\:hidden {
+    margin-right: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Push logo further left */
+  .dynamic-island-content .flex.items-center.pl-2 {
+    padding-left: 0.75rem;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Scale animation for floating buttons */
+@keyframes floatButton {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.float-animation {
+  animation: floatButton 3s ease-in-out infinite;
+}

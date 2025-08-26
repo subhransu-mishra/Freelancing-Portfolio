@@ -9,27 +9,6 @@ import {
 } from "react-icons/fa";
 import "./../styles/Hero.css";
 
-// Floating icon component
-const FloatingIcon = ({ icon: Icon, delay, duration, x, y }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 0 }}
-    animate={{
-      opacity: [0.3, 0.6, 0.3],
-      y: [0, y, 0],
-      x: [0, x, 0],
-    }}
-    transition={{
-      duration: duration,
-      repeat: Infinity,
-      delay: delay,
-      ease: "easeInOut",
-    }}
-    className="absolute text-white/20 text-4xl"
-  >
-    <Icon />
-  </motion.div>
-);
-
 export default function HeroSection() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +27,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden" id="home">
+    <div
+      className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden"
+      id="home"
+    >
       {/* Background grid effect */}
       <div className="absolute inset-0 z-0 opacity-40">
         <div className="w-full h-full grid grid-cols-12 grid-rows-12">
@@ -58,88 +40,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Floating Icons */}
-      <FloatingIcon
-        icon={FaRocket}
-        delay={0}
-        duration={8}
-        x={20}
-        y={-50}
-        style={{ top: "15%", left: "5%" }}
-      />
-      <FloatingIcon
-        icon={FaCode}
-        delay={1}
-        duration={7}
-        x={-30}
-        y={-40}
-        style={{ top: "25%", right: "10%" }}
-      />
-      <FloatingIcon
-        icon={FaServer}
-        delay={2}
-        duration={9}
-        x={25}
-        y={-30}
-        style={{ top: "45%", left: "15%" }}
-      />
-      <FloatingIcon
-        icon={FaDatabase}
-        delay={3}
-        duration={8}
-        x={-20}
-        y={-35}
-        style={{ top: "65%", right: "20%" }}
-      />
-      <FloatingIcon
-        icon={FaCloud}
-        delay={4}
-        duration={7}
-        x={15}
-        y={-45}
-        style={{ top: "35%", left: "30%" }}
-      />
-      <FloatingIcon
-        icon={FaRocket}
-        delay={5}
-        duration={8}
-        x={-25}
-        y={-30}
-        style={{ top: "75%", left: "25%" }}
-      />
-      <FloatingIcon
-        icon={FaCode}
-        delay={6}
-        duration={7}
-        x={20}
-        y={-40}
-        style={{ top: "85%", right: "15%" }}
-      />
-      <FloatingIcon
-        icon={FaServer}
-        delay={7}
-        duration={9}
-        x={-15}
-        y={-35}
-        style={{ top: "55%", right: "30%" }}
-      />
-      <FloatingIcon
-        icon={FaDatabase}
-        delay={8}
-        duration={8}
-        x={25}
-        y={-45}
-        style={{ top: "95%", left: "10%" }}
-      />
-      <FloatingIcon
-        icon={FaCloud}
-        delay={9}
-        duration={7}
-        x={-20}
-        y={-30}
-        style={{ top: "5%", left: "40%" }}
-      />
-
       {/* Glowing orbs effect */}
       <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-pink-500 opacity-20 blur-3xl animate-pulse"></div>
       <div
@@ -147,104 +47,112 @@ export default function HeroSection() {
         style={{ animationDelay: "1s" }}
       ></div>
 
-      {/* Navbar */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-black/50 backdrop-blur-lg py-2" : "bg-transparent py-4"
+      {/* Dynamic Island Navbar */}
+      <div className="fixed top-5 left-0 right-0 z-50 flex justify-center">
+        <motion.div
+          className={`dynamic-island always-expanded ${
+            scrolled ? "scrolled" : ""
+          }`}
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        >
+          <div className="dynamic-island-content">
+            {/* Logo and Menu Items */}
+            <div className="flex items-center justify-between w-full px-4 sm:px-8">
+              {/* Increased left padding for mobile */}
+              <div className="flex items-center pl-4 sm:pl-2 mobile-logo">
+                <svg
+                  className="w-6 h-6 text-white"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span className="ml-2 text-lg font-bold text-white">
+                  WebNexity
+                </span>
+              </div>
+
+              {/* Desktop Links - Always visible */}
+              <div className="hidden md:flex items-center space-x-8">
+                <NavLink title="About us" active />
+                <NavLink title="Services" />
+                <NavLink title="Our Works" />
+              </div>
+
+              {/* Desktop Action Button - Always visible */}
+              <div className="hidden md:block">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cursor-pointer relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-6 py-1.5 rounded-full text-sm transition-all duration-300 overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <span className="mr-2">Let's Chat</span>
+                    <FaRocket className="w-3 h-3 transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                </motion.button>
+              </div>
+
+              {/* Mobile Menu Button - Added right padding */}
+              <button
+                className="md:hidden text-white z-50 relative pr-2 sm:pr-0 mobile-menu-btn"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <div className="w-5 h-5 flex flex-col justify-center items-center">
+                  <span
+                    className={`block w-5 h-0.5 bg-white transform transition-all duration-300 ${
+                      mobileMenuOpen
+                        ? "rotate-45 translate-y-0.5"
+                        : "-translate-y-1"
+                    }`}
+                  ></span>
+                  <span
+                    className={`block w-5 h-0.5 bg-white transition-all duration-300 ${
+                      mobileMenuOpen ? "opacity-0" : "opacity-100"
+                    }`}
+                  ></span>
+                  <span
+                    className={`block w-5 h-0.5 bg-white transform transition-all duration-300 ${
+                      mobileMenuOpen
+                        ? "-rotate-45 -translate-y-0.5"
+                        : "translate-y-1"
+                    }`}
+                  ></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden fixed inset-0 bg-black/80 backdrop-blur-lg transition-all duration-500 ease-in-out z-40 ${
+          mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center z-50">
-            <svg
-              className="w-8 h-8 text-white"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span className="ml-2 text-xl font-bold text-white">WebNexity</span>
-          </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center justify-center flex-1 mx-8">
-            <div className="flex items-center space-x-12">
-              <NavLink title="About us" active />
-              <NavLink title="Services" />
-              <NavLink title="Our Works" />
-            </div>
-          </div>
-
-          {/* Contact Button - Fixed Position */}
-          <div className="hidden md:block">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="cursor-pointer relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-8 py-2.5 rounded-full text-sm transition-all duration-300 overflow-hidden"
-            >
-              <span className="relative z-10 flex items-center">
-                <span className="mr-2">Let's Chat</span>
-                <FaRocket className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-            </motion.button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-white z-50 relative cursor-pointer"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        <div className="h-full flex flex-col items-center justify-center space-y-8">
+          <NavLink title="About us" active />
+          <NavLink title="Services" />
+          <NavLink title="Our Works" />
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-8 py-3 rounded-full text-sm transition-all duration-300 overflow-hidden"
           >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span
-                className={`block w-6 h-0.5 bg-white transform transition-all duration-300 ${
-                  mobileMenuOpen
-                    ? "rotate-45 translate-y-0.5"
-                    : "-translate-y-1"
-                }`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                  mobileMenuOpen ? "opacity-0" : "opacity-100"
-                }`}
-              ></span>
-              <span
-                className={`block w-6 h-0.5 bg-white transform transition-all duration-300 ${
-                  mobileMenuOpen
-                    ? "-rotate-45 -translate-y-0.5"
-                    : "translate-y-1"
-                }`}
-              ></span>
-            </div>
-          </button>
+            <span className="relative z-10 flex items-center">
+              <span className="mr-2">Let's Chat</span>
+              <FaRocket className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+          </motion.button>
         </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`md:hidden fixed inset-0 bg-black/80 backdrop-blur-lg transition-all duration-500 ease-in-out ${
-            mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
-        >
-          <div className="h-full flex flex-col items-center justify-center space-y-8">
-            <NavLink title="About us" active />
-            <NavLink title="Services" />
-            <NavLink title="Our Works" />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-8 py-3 rounded-full text-sm transition-all duration-300 overflow-hidden"
-            >
-              <span className="relative z-10 flex items-center">
-                <span className="mr-2">Let's Chat</span>
-                <FaRocket className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-            </motion.button>
-          </div>
-        </div>
-      </nav>
+      </div>
 
       {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 pt-32 pb-32 min-h-screen flex flex-col justify-center items-center text-center">
