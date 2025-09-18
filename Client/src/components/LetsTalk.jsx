@@ -51,14 +51,14 @@ export const LetsTalk = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@techagency.com",
-      link: "mailto:hello@techagency.com",
+      value: "webnexitytech@gmail.com",
+      link: "mailto:webnexitytech@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+91 7008207704",
-      link: "tel:+15551234567",
+      link: "tel:+917008207704",
     },
     {
       icon: MapPin,
@@ -130,7 +130,10 @@ export const LetsTalk = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden">
+    <section
+      id="contact"
+      className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>

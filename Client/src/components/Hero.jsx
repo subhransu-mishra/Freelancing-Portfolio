@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { NavLink as RouterNavLink, Link } from "react-router-dom";
 import {
   FaRocket,
   FaCode,
@@ -61,7 +62,10 @@ export default function HeroSection() {
             {/* Logo and Menu Items */}
             <div className="flex items-center justify-between w-full px-4 sm:px-8">
               {/* Increased left padding for mobile */}
-              <div className="flex items-center pl-4 sm:pl-2 mobile-logo">
+              <Link
+                to="/"
+                className="flex items-center pl-4 sm:pl-2 mobile-logo"
+              >
                 <svg
                   className="w-6 h-6 text-white"
                   viewBox="0 0 24 24"
@@ -72,13 +76,13 @@ export default function HeroSection() {
                 <span className="ml-2 text-lg font-bold text-white">
                   WebNexity
                 </span>
-              </div>
+              </Link>
 
               {/* Desktop Links - Always visible */}
               <div className="hidden md:flex items-center space-x-8">
-                <NavLink title="About us" active />
-                <NavLink title="Services" />
-                <NavLink title="Our Works" />
+                <NavLink to="/about" title="About us" />
+                <NavLink to="/services" title="Services" />
+                <NavLink to="/works" title="Our Works" />
               </div>
 
               {/* Desktop Action Button - Always visible */}
@@ -136,9 +140,9 @@ export default function HeroSection() {
         }`}
       >
         <div className="h-full flex flex-col items-center justify-center space-y-8">
-          <NavLink title="About us" active />
-          <NavLink title="Services" />
-          <NavLink title="Our Works" />
+          <NavLink to="/about" title="About us" />
+          <NavLink to="/services" title="Services" />
+          <NavLink to="/works" title="Our Works" />
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -193,20 +197,24 @@ export default function HeroSection() {
 }
 
 // NavLink component
-function NavLink({ title, active }) {
+function NavLink({ to, title }) {
   return (
-    <a
-      href="#"
-      className={`text-white text-lg font-medium transition-all duration-300 relative group ${
-        active ? "text-white" : "text-white/70 hover:text-white"
-      }`}
+    <RouterNavLink
+      to={to}
+      className={({ isActive }) =>
+        `text-white text-lg font-medium transition-all duration-300 relative group ${
+          isActive ? "text-white" : "text-white/70 hover:text-white"
+        }`
+      }
     >
       {title}
       <span
-        className={`absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full ${
-          active ? "w-full" : ""
-        }`}
+        className={({ isActive }) =>
+          `absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full ${
+            isActive ? "w-full" : ""
+          }`
+        }
       ></span>
-    </a>
+    </RouterNavLink>
   );
 }
