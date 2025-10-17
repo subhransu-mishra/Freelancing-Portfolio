@@ -6,7 +6,7 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import { Testimonials } from "../components/Testimonials";
 import OurProcess from "../components/OurProcess";
 import { LetsTalk } from "../components/LetsTalk";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 import OurWork from "../components/OurWorks";
 
 const Home = () => {
@@ -32,7 +32,7 @@ const Home = () => {
   ];
 
   return (
-    <div>
+    <Layout>
       <HeroSection />
       <AboutUs />
       <WhatWeDo />
@@ -41,8 +41,7 @@ const Home = () => {
       <Testimonials testimonials={testimonialsData} autoplay={true} />
       <OurProcess />
       <LetsTalk />
-      <Footer />
-    </div>
+    </Layout>
   );
 };
 
