@@ -19,11 +19,11 @@ export default function OurWork() {
   const projects = [
     {
       id: 0,
-      title: "SeaSand Properties",
+      title: "Seasand Properties",
       subtitle: "Real Estate Website",
       description: "A premium property listing platform featuring advanced search functionality, virtual tours, and a seamless booking system for property viewings.",
-      image: "/seasand-pic-1.png",
-      mobileImage: "/seasand-pic-2.png",
+      image: "/seasand1.png",
+      mobileImage: "/seasand2.png",
       color: "from-blue-500 to-cyan-400",
       services: ["UI/UX Design", "Web Development", "CMS Integration", "SEO Optimization"],
       features: [
@@ -34,8 +34,8 @@ export default function OurWork() {
         "Secure user accounts",
         "Agent dashboards"
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Google Maps API", "AWS"],
-      link: "https://seasandproperties.in/",
+      technologies: ["React", "Node.js", "MongoDB", "Google Maps API", "Vercel"],
+      link: "https://seasandproperties.com/",
       year: "2025"
     },
     {

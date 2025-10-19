@@ -48,7 +48,7 @@ export default function Navbar() {
               <div className="hidden md:flex items-center space-x-8">
                 <NavLink to="/about" title="About us" />
                 <NavLink to="/services" title="Services" />
-                <NavLink to="/works" title="Our Works" />
+                <NavLink to="/works" title="How we works" />
               </div>
 
               {/* Desktop Action Button */}
@@ -118,7 +118,7 @@ export default function Navbar() {
           />
           <NavLink
             to="/works"
-            title="Our Works"
+            title="How we works"
             onClick={() => setMobileMenuOpen(false)}
           />
           <motion.button
