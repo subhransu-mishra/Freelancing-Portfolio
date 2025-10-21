@@ -12,8 +12,8 @@ import OurWork from "../components/OurWorks";
 const Home = () => {
   const testimonialsData = [
     {
-      name: "Sarah Johnson",
-      designation: "CEO, TechStart Inc.",
+      name: "Seasand Properties",
+      designation: "Seasand Properties",
       quote:
         "Working with this team was transformative for our business. Their innovative approach to web development and attention to detail resulted in a platform that exceeded our expectations. The seamless user experience they created has significantly improved our customer engagement.",
     },

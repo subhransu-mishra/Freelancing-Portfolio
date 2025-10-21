@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FiSmartphone,
   FiGlobe,
@@ -12,6 +13,7 @@ const WhatWeDo = () => {
     {
       icon: <FiCode />,
       title: "UI/UX Design",
+
       description:
         "Creating intuitive and engaging user interfaces that enhance user experience and drive conversions.",
     },
@@ -95,9 +97,9 @@ const WhatWeDo = () => {
                 <p className="text-gray-400 leading-relaxed mb-4">
                   {service.description}
                 </p>
-                <button className="flex items-center cursor-pointer gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-bold text-white hover:scale-105 transition-transform duration-300 shadow-lg shadow-purple-500/30">
+                <Link to="/services" className="flex items-center cursor-pointer gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-bold text-white hover:scale-105 transition-transform duration-300 shadow-lg shadow-purple-500/30">
                   Learn More <FiArrowRight className="text-lg" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -109,9 +111,9 @@ const WhatWeDo = () => {
           transition={{ delay: 0.5 }}
           className="mt-20 text-center"
         >
-          <button className="px-8 cursor-pointer py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-bold text-white hover:scale-105 transition-transform duration-300 shadow-lg shadow-purple-500/30">
+          <Link to="/services" className="px-8 cursor-pointer py-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg font-bold text-white hover:scale-105 transition-transform duration-300 shadow-lg shadow-purple-500/30">
             Explore Services
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

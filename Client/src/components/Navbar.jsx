@@ -53,18 +53,20 @@ export default function Navbar() {
 
               {/* Desktop Action Button */}
               <div className="hidden md:block">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="cursor-pointer relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-6 py-1.5 rounded-full text-sm transition-all duration-300 overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center">
-                    <span className="mr-2">Let's Chat</span>
-                    <FaRocket className="w-3 h-3 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
-                </motion.button>
+                <Link to="mailto:team.webnexity@gmail.com">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="cursor-pointer relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-6 py-1.5 rounded-full text-sm transition-all duration-300 overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center">
+                      <span className="mr-2">Let's Build</span>
+                      <FaRocket className="w-3 h-3 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                  </motion.button>
+                </Link>
               </div>
 
               {/* Mobile Menu Button */}
@@ -127,7 +129,7 @@ export default function Navbar() {
             className="relative group bg-transparent border-2 border-blue-500/50 hover:border-blue-500 text-white px-8 py-3 rounded-full text-sm transition-all duration-300 overflow-hidden"
           >
             <span className="relative z-10 flex items-center">
-              <span className="mr-2">Let's Chat</span>
+              <span className="mr-2">Let's Build</span>
               <FaRocket className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

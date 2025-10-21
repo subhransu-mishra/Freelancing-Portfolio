@@ -66,7 +66,7 @@ export default function Footer() {
           {/* Logo and Brief */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">ByteCraft</h2>
+              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">WebNexity</h2>
             </div>
             <p className="text-gray-400 mb-6">
               We craft digital experiences that delight users and drive business growth. Our passion for innovation fuels every project we undertake.
@@ -198,7 +198,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="py-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} ByteCraft. All rights reserved.
+            © {new Date().getFullYear()} Webnexity. All rights reserved.
           </p>
           
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-500">
