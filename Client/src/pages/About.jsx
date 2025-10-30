@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import {motion} from 'framer-motion';
 import {
   FaRocket,
   FaCogs,
