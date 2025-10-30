@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import {
   FaRocket,
   FaCogs,
@@ -46,10 +46,25 @@ const processes = [
 ];
 
 export default function About() {
-  void motion;
-
   return (
     <Layout>
+      <SEO
+        title="About Us - Expert Digital Solutions Team"
+        description="Learn about WebNexity's expert team of developers, designers, and digital strategists. We bring years of experience in web development, UI/UX design, and cloud solutions."
+        keywords={[
+          "about webnexity",
+          "digital agency team",
+          "expert developers",
+          "UI/UX designers",
+          "web development team",
+          "professional web agency",
+          "tech consulting team",
+          "digital transformation experts",
+          "web solution providers",
+          "cloud deployment specialists",
+        ]}
+        route="/about"
+      />
       <div className="relative min-h-screen bg-black text-white overflow-hidden">
         {/* subtle grid and glow */}
         <div className="absolute inset-0 -z-10 bg-black">

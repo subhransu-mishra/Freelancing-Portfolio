@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import { FaReact, FaNodeJs, FaCloud, FaMobileAlt } from "react-icons/fa";
 import {
   SiFigma,
@@ -30,6 +31,28 @@ export default function Services() {
   void motion;
   return (
     <Layout>
+      <SEO
+        title="Professional Web Development & Design Services"
+        description="Comprehensive web development, mobile app development, UI/UX design, and cloud deployment services. From concept to deployment, we deliver cutting-edge digital solutions."
+        keywords={[
+          "web development services",
+          "mobile app development",
+          "UI/UX design services",
+          "cloud deployment solutions",
+          "full stack development",
+          "react development services",
+          "node.js development",
+          "custom web applications",
+          "responsive web design",
+          "website optimization",
+          "cloud hosting services",
+          "web maintenance services",
+          "enterprise web solutions",
+          "e-commerce development",
+          "progressive web apps",
+        ]}
+        route="/services"
+      />
       {/* Page background */}
       <div className="relative overflow-hidden bg-black">
         <div className="pointer-events-none absolute inset-0">

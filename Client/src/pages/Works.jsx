@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import {
   FaFigma,
   FaCode,
@@ -102,6 +103,28 @@ export default function Works() {
 
   return (
     <Layout>
+      <SEO
+        title="Our Work - Featured Projects & Case Studies"
+        description="Explore WebNexity's portfolio of successful web development, mobile app, and digital transformation projects. See how we help businesses achieve their digital goals."
+        keywords={[
+          "web development portfolio",
+          "mobile app portfolio",
+          "UI/UX case studies",
+          "web design projects",
+          "successful web applications",
+          "digital transformation cases",
+          "react development projects",
+          "node.js applications",
+          "cloud deployment examples",
+          "web development case studies",
+          "enterprise solutions",
+          "digital project showcase",
+          "web development results",
+          "client success stories",
+          "development process",
+        ]}
+        route="/works"
+      />
       <div className="relative min-h-screen bg-black text-white">
         {/* Background Elements */}
         <div className="absolute inset-0 -z-10">

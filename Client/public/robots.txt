@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Allow all bots to index the site
+Sitemap: https://webnexity.com/sitemap.xml
+
+# Optimized crawling
+Crawl-delay: 10
+
+# Disallow duplicate content paths and admin areas
+Disallow: /admin/
+Disallow: /*?*
+Disallow: /*?
