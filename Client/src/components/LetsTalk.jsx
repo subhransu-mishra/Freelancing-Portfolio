@@ -51,8 +51,8 @@ export const LetsTalk = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "team.webnexity@gmail.com",
-      link: "mailto:team.webnexity@gmail.com",
+      value: "techwebnexity@gmail.com",
+      link: "mailto:techwebnexity@gmail.com",
     },
     {
       icon: Phone,

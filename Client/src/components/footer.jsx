@@ -47,7 +47,7 @@ export default function Footer() {
     { name: 'Github', icon: <Github size={20} />, href: '#' },
     { name: 'LinkedIn', icon: <Linkedin size={20} />, href: '#' },
     { name: 'Twitter', icon: <Twitter size={20} />, href: '#' },
-    { name: 'Instagram', icon: <Instagram size={20} />, href: '#' },
+    { name: 'Instagram', icon: <Instagram size={20} />, href: 'https://www.instagram.com/webnexity_tech?igsh=d3hqbnRlZm5wdjhz' },
   ];
 
   return (

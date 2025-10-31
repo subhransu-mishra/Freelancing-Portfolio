@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./footer";
+import CookieConsent from "./CookieConsent";
 
 export default function Layout({ children }) {
   return (
@@ -9,6 +10,8 @@ export default function Layout({ children }) {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      {/* Global cookie consent modal */}
+      <CookieConsent />
     </div>
   );
 }

@@ -54,18 +54,34 @@ export default function HeroSection() {
           className="text-lg md:text-xl text-white/80 max-w-xl mx-auto mb-12 animate-fadeIn"
           style={{ animationDelay: "0.3s" }}
         >
-          For <span className="bg-white/20 px-2 py-1 rounded-md">5 years</span>{" "}
-          we're bringing first class apps to our clients
+          For <span className="bg-white/20 px-2 py-1 rounded-md">3 years</span>{" "}
+          we're bringing the best solutions to help businesses thrive in the
+          digital era.
         </p>
 
+        {/* Transparent premium button with gradient ring and hover glow */}
         <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="cursor-pointer bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium flex items-center transition-all duration-300 animate-fadeIn shadow-lg shadow-purple-500/30"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
           style={{ animationDelay: "0.6s" }}
+          className="relative group inline-flex items-center justify-center rounded-full p-[2px] cursor-pointer bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 hover:shadow-[0_0_30px_rgba(59,130,246,0.35)]"
         >
-          <span className="mr-2">Get Started</span>
-          <FaRocket className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+          {/* Inner pill keeps background transparent */}
+          <span className="relative inline-flex items-center gap-2 px-7 py-2 rounded-full bg-transparent text-white text-sm">
+            <span className="font-medium tracking-wide">Get Started</span>
+            <FaRocket className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+          {/* Subtle hover sheen without filling background */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            style={{
+              WebkitMask:
+                "radial-gradient(120px 120px at 30% 30%, #000 20%, transparent 60%)",
+              background:
+                "linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04), rgba(255,255,255,0.12))",
+            }}
+          />
         </motion.button>
       </div>
     </div>
