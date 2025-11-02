@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Works from "./pages/Works";
 import LogoLoader from "./components/LogoLoader";
+import Contact from "./pages/Contact";
+import Layout from "./components/Layout";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -25,18 +27,15 @@ const App = () => {
         {isLoading ? (
           <LogoLoader onLoadingComplete={() => setIsLoading(false)} />
         ) : (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
+          <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/works" element={<Works />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
-          </motion.div>
+          </Layout>
         )}
       </AnimatePresence>
     </Router>

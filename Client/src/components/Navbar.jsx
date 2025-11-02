@@ -53,7 +53,7 @@ export default function Navbar() {
 
               {/* Desktop Action Button */}
               <div className="hidden md:block">
-                <Link to="mailto:techwebnexity@gmail.com">
+                <Link to="/contact">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
