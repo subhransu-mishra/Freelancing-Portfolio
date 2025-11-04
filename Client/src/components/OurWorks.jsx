@@ -9,6 +9,8 @@ import {
   Code,
   Lightbulb
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function OurWork() {
   const [activeProject, setActiveProject] = useState(0);
@@ -306,13 +308,17 @@ export default function OurWork() {
         
         {/* CTA */}
         <div className="mt-20 text-center">
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
-          >
-            <span>Start Your Project</span>
-            <ChevronRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          <Link to="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="cursor-pointer px-8 py-3.5 hover:bg-black bg-gradient-to-r from-[#006CAA]/40 via-[#581C87]/40 to-[#2563EB]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,108,170,0.35)]  rounded-xl font-bold text-white shadow-lg shadow-purple-500/20 relative overflow-hidden group"
+            >
+              <span className="relative z-10">Start Your Project</span>
+              <div className="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </motion.button>
+          </Link>
         </div>
       </div>
     </div>

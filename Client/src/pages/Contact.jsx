@@ -8,6 +8,7 @@ import {
   FaTwitter,
   FaClock,
   FaChevronDown,
+  FaInstagram,
 } from "react-icons/fa";
 
 const Contact = () => {
@@ -120,7 +121,7 @@ const Contact = () => {
                 <div>
                   <p className="font-semibold">Phone</p>
                   <p className="text-gray-300">+91 9853779652</p>
-                  <p className="text-gray-300">+91 7008207704</p>
+                  <p className="text-gray-300">+91 9853779652</p>
                 </div>
               </motion.div>
 
@@ -141,32 +142,15 @@ const Contact = () => {
               <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
               <div className="flex space-x-4">
                 <motion.a
-                  whileHover={{ y: -5 }}
-                  href="https://linkedin.com"
+                  whileHover={{ scale: 1.2 }}
+                  href="https://www.instagram.com/webnexity_tech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-3xl text-purple-400 hover:text-purple-300"
+                  className="text-white text-2xl"
                 >
-                  <FaLinkedin />
+                  <FaInstagram />
                 </motion.a>
-                <motion.a
-                  whileHover={{ y: -5 }}
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-3xl text-purple-400 hover:text-purple-300"
-                >
-                  <FaGithub />
-                </motion.a>
-                <motion.a
-                  whileHover={{ y: -5 }}
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-3xl text-purple-400 hover:text-purple-300"
-                >
-                  <FaTwitter />
-                </motion.a>
+                
               </div>
             </div>
           </motion.div>

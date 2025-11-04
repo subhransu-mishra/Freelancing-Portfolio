@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import {motion} from 'framer-motion';
+import { motion } from "framer-motion";
 import {
   FaRocket,
   FaCogs,
@@ -10,6 +10,7 @@ import {
   FaCode,
   FaCheckCircle,
 } from "react-icons/fa";
+// Removed Link import since CTA now opens external WhatsApp link directly
 
 const fade = {
   hidden: { opacity: 0, y: 18 },
@@ -17,9 +18,9 @@ const fade = {
 };
 
 const stats = [
-  { number: "150+", label: "Projects" },
-  { number: "50+", label: "Clients" },
-  { number: "5", label: "Years" },
+  { number: "30", label: "Projects" },
+  { number: "40+", label: "Clients" },
+  { number: "3", label: "Years" },
   { number: "99%", label: "Satisfaction" },
 ];
 
@@ -205,10 +206,15 @@ export default function About() {
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <a className="inline-flex items-center px-6 py-3 rounded-full bg-blue-500 text-black font-semibold">
+                <a
+                  href="https://wa.me/919853779652?text=Hi%20WebNexity%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chat with us on WhatsApp"
+                  className="inline-flex items-center px-6 py-3 rounded-full bg-blue-500 text-black font-semibold hover:opacity-90 transition"
+                >
                   Let’s talk
                 </a>
-                <a className="text-white/70">See pricing</a>
               </div>
             </div>
           </div>

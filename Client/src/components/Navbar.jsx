@@ -32,13 +32,7 @@ export default function Navbar() {
                 to="/"
                 className="flex items-center pl-4 sm:pl-2 mobile-logo"
               >
-                <svg
-                  className="w-6 h-6 text-white"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                </svg>
+                <img src="/logo.svg" alt="WebNexity Logo" className="w-8 h-8" />
                 <span className="ml-2 text-lg font-bold text-white">
                   WebNexity
                 </span>
@@ -53,7 +47,7 @@ export default function Navbar() {
 
               {/* Desktop Action Button */}
               <div className="hidden md:block">
-                <Link to="/contact">
+                <Link to="https://wa.me/919853779652?text=Hi%20WebNexity%2C%20I%27d%20like%20to%20discuss%20a%20project.">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

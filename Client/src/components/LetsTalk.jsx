@@ -57,8 +57,8 @@ export const LetsTalk = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 7008207704",
-      link: "tel:+917008207704",
+      value: "+91 9853779652",
+      link: "tel:+919853779652",
     },
     {
       icon: MapPin,
