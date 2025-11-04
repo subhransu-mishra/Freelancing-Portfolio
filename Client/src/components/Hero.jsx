@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   FaRocket,
   FaCode,
@@ -9,11 +10,19 @@ import {
 import "./../styles/Hero.css";
 
 export default function HeroSection() {
-  void motion;
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate("/services");
+  };
 
   return (
     <div
-      className="relative min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(145deg, rgb(0, 0, 0) 0%, rgb(22, 10, 39) 25%, rgb(27, 0, 51) 50%, rgb(0, 17, 33) 75%, rgb(0, 28, 42) 100%)",
+      }}
       id="home"
     >
       {/* Background grid effect */}
@@ -26,10 +35,28 @@ export default function HeroSection() {
       </div>
 
       {/* Glowing orbs effect */}
-      <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-pink-500 opacity-20 blur-3xl animate-pulse"></div>
       <div
-        className="absolute bottom-20 left-20 w-80 h-80 rounded-full bg-blue-500 opacity-20 blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
+        className="absolute top-20 right-20 w-96 h-96 rounded-full opacity-30 blur-3xl animate-pulse"
+        style={{
+          background:
+            "linear-gradient(225deg, rgba(147, 51, 234, 0.5) 0%, rgba(79, 70, 229, 0.5) 100%)",
+        }}
+      ></div>
+      <div
+        className="absolute -bottom-32 -left-32 w-[45rem] h-[45rem] rounded-full opacity-30 blur-3xl animate-pulse"
+        style={{
+          background:
+            "linear-gradient(225deg, rgba(0, 108, 170, 0.5) 0%, rgba(0, 106, 166, 0.5) 50%, rgba(0, 191, 255, 0.5) 100%)",
+          animationDelay: "1s",
+        }}
+      ></div>
+      <div
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] rounded-full opacity-30 blur-3xl animate-pulse"
+        style={{
+          background:
+            "linear-gradient(225deg, rgba(88, 28, 135, 0.5) 0%, rgba(37, 99, 235, 0.5) 100%)",
+          animationDelay: "2s",
+        }}
       ></div>
 
       {/* Navbar moved to global Layout */}
@@ -61,6 +88,7 @@ export default function HeroSection() {
 
         {/* Transparent premium button with gradient ring and hover glow */}
         <motion.button
+          onClick={handleGetStarted}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.96 }}
           style={{ animationDelay: "0.6s" }}

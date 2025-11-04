@@ -67,7 +67,7 @@ export default function CookieConsent() {
                 </button>
                 <button
                   onClick={() => handleChoice("accepted")}
-                  className="relative cursor-pointer inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-400 hover:to-purple-400 shadow-lg shadow-blue-500/20 transition-colors"
+                  className="relative cursor-pointer inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-black bg-white hover:bg-amber-50 shadow-lg shadow-blue-500/20 transition-colors"
                 >
                   <FaCheck className="h-3.5 w-3.5" />
                   Accept all

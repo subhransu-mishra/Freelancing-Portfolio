@@ -21,7 +21,7 @@ function AboutUs() {
 
   const targetCounts = {
     projects: 30,
-    years: 5,
+    years: 3,
     clients: 25,
   };
 
@@ -376,7 +376,7 @@ function AboutUs() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="cursor-pointer bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 shadow-lg shadow-purple-500/30"
+                className="cursor-pointer bg-white text-black px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 shadow-lg shadow-purple-500/30"
               >
                 Start Your Project
               </motion.button>
