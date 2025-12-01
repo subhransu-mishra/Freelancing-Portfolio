@@ -33,7 +33,7 @@ const Home = () => {
   ];
 
   return (
-    <Layout>
+    <>
       <SEO
         title="Premium Web Development & Design Agency"
         description="WebNexity - Your trusted partner for professional web development, mobile apps, UI/UX design, and cloud deployments. Transform your digital presence with our expert team."
@@ -64,7 +64,7 @@ const Home = () => {
       <Testimonials testimonials={testimonialsData} autoplay={true} />
       <OurProcess />
       <LetsTalk />
-    </Layout>
+    </>
   );
 };
 

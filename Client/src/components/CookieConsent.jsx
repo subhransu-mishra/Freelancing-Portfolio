@@ -2,75 +2,83 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCookieBite, FaCheck, FaTimes } from "react-icons/fa";
 
+const COOKIE_CONSENT_KEY = 'webnexity_cookie_consent';
+
 export default function CookieConsent() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     try {
-      const stored = localStorage.getItem("cookieConsent");
-      if (!stored) {
-        const t = setTimeout(() => setOpen(true), 500);
-        return () => clearTimeout(t);
+      const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+      if (!consent) {
+        const timer = setTimeout(() => setOpen(true), 1000);
+        return () => clearTimeout(timer);
       }
-    } catch (_) {
-      setOpen(true);
+    } catch (e) {
+      console.error('Error accessing localStorage:', e);
     }
   }, []);
 
   const handleChoice = (choice) => {
     try {
-      localStorage.setItem("cookieConsent", choice);
-    } catch (_) {
-      // ignore storage issues
+      localStorage.setItem(COOKIE_CONSENT_KEY, choice);
+    } catch (e) {
+      console.error('Error saving cookie preference:', e);
     }
     setOpen(false);
   };
+
+  // Don't render anything during SSR or if not mounted yet
+  if (!mounted) return null;
 
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          initial={{ x: 40, y: 40, opacity: 0 }}
-          animate={{ x: 0, y: 0, opacity: 1 }}
-          exit={{ x: 40, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 320, damping: 30 }}
-          className="fixed bottom-5 right-5 z-50 w-[22rem] max-w-[92vw]"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 20, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-5 right-5 z-50 w-96 max-w-[calc(100%-2rem)]"
           role="dialog"
           aria-label="Cookie consent"
         >
-          <div className="relative rounded-2xl border border-white/15 bg-black/70 backdrop-blur-md shadow-xl">
-            {/* Accent ring */}
-            <div className="pointer-events-none absolute -inset-px rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20" />
-
-            <div className="relative p-5">
-              <div className="flex items-start gap-3">
-                <div className="shrink-0 mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-white/10">
-                  <FaCookieBite className="text-yellow-300" />
+          <div className="bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200">
+            <div className="p-4">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 pt-0.5">
+                  <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <FaCookieBite className="text-blue-600" />
+                  </div>
                 </div>
-                <div className="text-sm text-white/80">
-                  <h3 className="text-white font-semibold mb-1">We use cookies</h3>
-                  <p>
-                    We use cookies to enhance your experience, analyze traffic, and serve content.
-                    You can accept or reject. See our
-                    <a href="#privacy" className="text-blue-300 hover:text-blue-200 ml-1 underline decoration-blue-500/60">Privacy Policy</a>.
+                <div className="ml-3">
+                  <h3 className="text-sm font-medium text-gray-900">We value your privacy</h3>
+                  <p className="mt-1 text-sm text-gray-600">
+                    We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
                   </p>
+                  <div className="mt-3 flex space-x-3">
+                    <button
+                      onClick={() => handleChoice("accepted")}
+                      className="px-4 cursor-pointer py-2 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    >
+                      Accept
+                    </button>
+                    <button
+                      onClick={() => handleChoice("rejected")}
+                      className="px-4 cursor-pointer py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                    >
+                      Reject
+                    </button>
+                  </div>
                 </div>
-              </div>
-
-              <div className="mt-4 flex items-center gap-3 justify-end">
                 <button
-                  onClick={() => handleChoice("rejected")}
-                  className="inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-xs font-medium text-white/85 border border-white/25 hover:border-white/50 bg-transparent transition-colors"
+                  onClick={() => setOpen(false)}
+                  className="ml-4 cursor-pointer text-gray-400 hover:text-gray-500"
+                  aria-label="Close"
                 >
-                  <FaTimes className="h-3.5 w-3.5" />
-                  Reject
-                </button>
-                <button
-                  onClick={() => handleChoice("accepted")}
-                  className="relative cursor-pointer inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-semibold text-black bg-white hover:bg-amber-50 shadow-lg shadow-blue-500/20 transition-colors"
-                >
-                  <FaCheck className="h-3.5 w-3.5" />
-                  Accept all
+                  <FaTimes className="h-5 w-5" />
                 </button>
               </div>
             </div>

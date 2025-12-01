@@ -89,13 +89,12 @@ export default function HeroSection() {
         {/* Transparent premium button with gradient ring and hover glow */}
         <motion.button
           onClick={handleGetStarted}
-          whileHover={{ scale: 1.04 }}
+          whileHover={{ scale: 1.04, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
           whileTap={{ scale: 0.96 }}
           style={{ animationDelay: "0.6s" }}
-          className="relative group inline-flex items-center justify-center rounded-full p-[2px] cursor-pointer bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 hover:shadow-[0_0_30px_rgba(59,130,246,0.35)]"
+          className="relative group inline-flex items-center justify-center rounded-full border-2 border-white/30 hover:border-white/50 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60"
         >
-          {/* Inner pill keeps background transparent */}
-          <span className="relative inline-flex items-center gap-2 px-7 py-2 rounded-full bg-transparent text-white text-sm">
+          <span className="relative inline-flex cursor-pointer items-center gap-2 px-7 py-2 rounded-full text-white text-sm">
             <span className="font-medium tracking-wide">Get Started</span>
             <FaRocket className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </span>
