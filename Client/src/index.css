@@ -1,5 +1,52 @@
 @import "tailwindcss";
 
+@theme {
+  --color-obsidian: #0B0B0C;
+  --color-charcoal: #121214;
+  --color-gold: #14B8A6;
+}
+
+/* Shiny border utilities */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes border-rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.shiny-button {
+  position: relative;
+  border-radius: 9999px;
+  background: #121214;
+  z-index: 1;
+}
+
+.shiny-button::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 40%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 60%
+  );
+  z-index: -1;
+  animation: border-rotate 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.shiny-button:hover::before {
+  opacity: 1;
+}
+
 /* Loader animations */
 @keyframes loader-pulse {
   0%,

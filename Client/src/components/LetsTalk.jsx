@@ -132,14 +132,9 @@ export const LetsTalk = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white relative overflow-hidden"
+      className="min-h-screen bg-[#0B0B0C] text-white relative overflow-hidden"
     >
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse"></div>
-      </div>
+      {/* Background Effects Removed */}
 
       <motion.div
         className="container mx-auto px-6 py-20 relative z-10"
@@ -150,7 +145,7 @@ export const LetsTalk = () => {
         {/* Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
           <motion.h2
-            className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent"
+            className="text-5xl font-bold mb-6 text-white tracking-wide"
             variants={itemVariants}
           >
             Let's Talk
@@ -193,14 +188,14 @@ export const LetsTalk = () => {
                   }
                 >
                   <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                      <info.icon size={24} className="text-white" />
+                    <div className="bg-neutral-800 p-3 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                      <info.icon size={24} className="text-[#14B8A6]" />
                     </div>
                     <div>
                       <h4 className="text-lg font-medium text-gray-200 mb-1">
                         {info.label}
                       </h4>
-                      <p className="text-gray-400 group-hover:text-blue-400 transition-colors duration-300">
+                      <p className="text-gray-400 transition-colors duration-300">
                         {info.value}
                       </p>
                     </div>
@@ -211,11 +206,11 @@ export const LetsTalk = () => {
 
             {/* Additional Info */}
             <motion.div
-              className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 mt-8"
+              className="bg-neutral-900/50 backdrop-blur-sm p-8 rounded-2xl border border-neutral-800 mt-8"
               variants={cardVariants}
               whileHover="hover"
             >
-              <h4 className="text-2xl font-semibold mb-4 text-blue-400">
+              <h4 className="text-2xl font-semibold mb-4 text-[#14B8A6]">
                 Why Choose Us?
               </h4>
               <ul className="space-y-3 text-gray-300">
@@ -316,14 +311,14 @@ export const LetsTalk = () => {
                 <motion.button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full cursor-pointer bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full shiny-button group text-white font-semibold py-4 px-8 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   {isLoading ? (
                     <motion.div
-                      className="w-6 h-6 border-2 border-white border-t-transparent rounded-full"
+                      className="w-6 h-6 border-2 border-[#14B8A6] border-t-transparent rounded-full"
                       animate={{ rotate: 360 }}
                       transition={{
                         duration: 1,
@@ -332,10 +327,10 @@ export const LetsTalk = () => {
                       }}
                     />
                   ) : (
-                    <>
-                      <Send size={20} />
+                    <span className="relative z-10 flex items-center space-x-2 text-sm tracking-widest uppercase">
+                      <Send size={18} />
                       <span>Send Message</span>
-                    </>
+                    </span>
                   )}
                 </motion.button>
               </form>

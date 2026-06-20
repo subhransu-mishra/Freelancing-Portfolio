@@ -2,10 +2,11 @@ import React from "react";
 import SEO from "../components/SEO";
 import HeroSection from "../components/Hero";
 import WhatWeDo from "../components/WhatWeDo";
+import MultiOrbitSemiCircle from "../components/ui/multi-orbit-semi-circle";
 import AboutUs from "../components/AboutUs";
 import WhyChooseUs from "../components/WhyChooseUs";
 import { Testimonials } from "../components/Testimonials";
-import OurProcess from "../components/OurProcess";
+
 import { LetsTalk } from "../components/LetsTalk";
 import Layout from "../components/Layout";
 import OurWork from "../components/OurWorks";
@@ -59,10 +60,11 @@ const Home = () => {
       <HeroSection />
       <AboutUs />
       <WhatWeDo />
+      <MultiOrbitSemiCircle />
       <WhyChooseUs />
       <OurWork />
       <Testimonials testimonials={testimonialsData} autoplay={true} />
-      <OurProcess />
+
       <LetsTalk />
     </>
   );

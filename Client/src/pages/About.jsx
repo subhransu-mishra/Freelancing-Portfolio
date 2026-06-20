@@ -69,8 +69,8 @@ export default function About() {
       />
       <div className="relative min-h-screen bg-black text-white overflow-hidden">
         {/* subtle grid and glow */}
-        <div className="absolute inset-0 -z-10 bg-black">
-          <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 mix-blend-overlay"></div>
+        <div className="absolute inset-0 -z-10 bg-[#0B0B0C]">
+          <div className="absolute inset-0 opacity-10 bg-black mix-blend-overlay"></div>
           <div className="absolute inset-0 grid grid-cols-12 grid-rows-12 opacity-10">
             {Array.from({ length: 144 }).map((_, i) => (
               <div key={i} className="border border-white/6"></div>
@@ -94,11 +94,8 @@ export default function About() {
               systems, and engineering to deliver meaningful results.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4">
-              <a className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 text-white hover:bg-white/5 transition">
+              <a href="/contact" className="shiny-button inline-flex items-center gap-2 px-8 py-3 rounded-full text-white tracking-widest uppercase text-sm font-medium transition-all duration-300">
                 Work with us
-              </a>
-              <a className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-white/60 hover:text-white transition">
-                See our process
               </a>
             </div>
           </motion.div>
@@ -114,10 +111,10 @@ export default function About() {
               variants={fade}
               className="lg:col-span-5"
             >
-              <div className="rounded-3xl p-6 border border-white/10 bg-gradient-to-br from-purple-700/10 to-blue-700/10 overflow-hidden">
-                <div className="aspect-[4/3] rounded-xl bg-black/40 backdrop-blur-sm border border-white/10 grid place-items-center">
+              <div className="rounded-3xl p-6 border border-neutral-800 bg-neutral-900/50 overflow-hidden">
+                <div className="aspect-[4/3] rounded-xl bg-black/40 backdrop-blur-sm border border-neutral-800 grid place-items-center">
                   <div className="text-center px-6">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 shadow-lg mb-4 flex items-center justify-center text-white text-2xl">
+                    <div className="w-24 h-24 rounded-full bg-[#14B8A6] shadow-lg mb-4 flex items-center justify-center text-black font-bold text-2xl">
                       WN
                     </div>
                     <p className="text-white/80">
@@ -128,7 +125,7 @@ export default function About() {
                 </div>
                 <div className="mt-4 flex gap-3 text-white/70">
                   <div className="flex items-center gap-2">
-                    <FaUsers className="text-cyan-400" />{" "}
+                    <FaUsers className="text-[#14B8A6]" />{" "}
                     <span>Cross-functional team</span>
                   </div>
                 </div>
@@ -155,7 +152,7 @@ export default function About() {
                     className="p-4 rounded-xl border border-white/8 bg-white/3"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-12 h-12 rounded-md bg-white/5 flex items-center justify-center text-xl text-blue-300">
+                      <div className="w-12 h-12 rounded-md bg-white/5 flex items-center justify-center text-xl text-[#14B8A6]">
                         <p className="sr-only">{p.title}</p>
                         <p className="text-2xl">
                           {React.createElement(p.icon)}
@@ -195,7 +192,7 @@ export default function About() {
 
         {/* CTA */}
         <section className="container mx-auto px-4 py-16 relative z-10">
-          <div className="rounded-3xl p-8 md:p-12 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10 border border-white/10">
+          <div className="rounded-3xl p-8 md:p-12 bg-neutral-900/50 border border-neutral-800 text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="text-2xl font-bold">
@@ -211,7 +208,7 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Chat with us on WhatsApp"
-                  className="inline-flex items-center px-6 py-3 rounded-full bg-blue-500 text-black font-semibold hover:opacity-90 transition"
+                  className="shiny-button inline-flex items-center gap-2 px-8 py-3 rounded-full text-white tracking-widest uppercase text-sm font-medium transition-all duration-300"
                 >
                   Let’s talk
                 </a>

@@ -21,7 +21,7 @@ const OurWorks = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-purple-900 to-indigo-900">
+    <section className="py-24 bg-[#121214]">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
@@ -44,17 +44,20 @@ const OurWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white/10 backdrop-blur-lg rounded-lg p-6"
+              className="group relative bg-neutral-900/50 border border-neutral-800 p-8 flex flex-col justify-between overflow-hidden transition-all duration-500 hover:bg-neutral-900"
             >
-              <h3 className="text-xl font-bold text-white mb-2">
-                {project.title}
-              </h3>
-              <p className="text-white/70 mb-4">{project.description}</p>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-neutral-400 mb-8">{project.description}</p>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-3 py-1 text-sm bg-blue-500/20 text-blue-300 rounded-full"
+                    className="px-3 py-1.5 text-xs font-mono uppercase tracking-wider bg-neutral-800 text-neutral-300 border border-neutral-700/50 rounded-sm"
                   >
                     {tech}
                   </span>

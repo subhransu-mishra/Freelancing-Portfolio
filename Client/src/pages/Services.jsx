@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import MultiOrbitSemiCircle from "../components/ui/multi-orbit-semi-circle";
 import { FaReact, FaNodeJs, FaCloud, FaMobileAlt } from "react-icons/fa";
 import {
   SiFigma,
@@ -382,6 +383,9 @@ export default function Services() {
             </motion.div>
           </div>
         </section>
+
+        {/* Integrations */}
+        <MultiOrbitSemiCircle />
 
         {/* CTA */}
         <section className="relative container mx-auto px-4 pb-24">

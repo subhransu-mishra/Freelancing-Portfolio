@@ -13,27 +13,26 @@ const WhatWeDo = () => {
     {
       icon: <FiCode />,
       title: "UI/UX Design",
-
       description:
-        "Creating intuitive and engaging user interfaces that enhance user experience and drive conversions.",
+        "Creating intuitive and engaging user interfaces that enhance user experience and drive conversions. We prioritize user-centered design, meticulous wireframing, and interactive prototyping to ensure optimal usability.",
     },
     {
       icon: <FiGlobe />,
       title: "Website Development",
       description:
-        "Building responsive and scalable websites using modern frameworks and best practices.",
+        "Building responsive and scalable websites using modern frameworks and best practices. From landing pages to complex web applications, we focus on performance, SEO, and accessible code architecture.",
     },
     {
       icon: <FiSmartphone />,
       title: "App Development",
       description:
-        "Developing cross-platform mobile applications with native performance and seamless user experience.",
+        "Developing cross-platform mobile applications with native performance and seamless user experience. We build robust solutions that look and feel great on both iOS and Android devices.",
     },
     {
       icon: <FiDatabase />,
       title: "Hosting & Deployment",
       description:
-        "Secure cloud hosting solutions and automated deployment pipelines for reliable application delivery.",
+        "Secure cloud hosting solutions and automated deployment pipelines for reliable application delivery. We manage the infrastructure so you can focus entirely on your business growth.",
     },
   ];
 
@@ -51,7 +50,7 @@ const WhatWeDo = () => {
   };
 
   return (
-    <section className="min-h-screen bg-black py-20 px-4 lg:px-0" id="services">
+    <section className="min-h-screen bg-[#0B0B0C] py-20 px-4 lg:px-0 border-t border-neutral-800" id="services">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -59,7 +58,7 @@ const WhatWeDo = () => {
           transition={{ duration: 1 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl font-bold mb-4 text-white bg-gradient-to-r from-[#006CAA] via-[#581C87] to-[#2563EB] bg-clip-text">
+          <h2 className="text-5xl font-bold mb-4 text-white tracking-wide">
             What We Do for You
           </h2>
           <p className="text-gray-400 text-xl">
@@ -75,33 +74,34 @@ const WhatWeDo = () => {
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
-              className="group relative p-6 rounded-xl bg-black/20 backdrop-blur-lg border border-white/5 hover:border-transparent transition-all duration-300 hover:shadow-2xl hover:shadow-[#006CAA]/20 cursor-pointer"
+              className="group relative p-8 flex flex-col justify-between overflow-hidden bg-neutral-900/50 backdrop-blur-lg border border-neutral-800 transition-all duration-500 hover:border-[#14B8A6]/50 hover:bg-neutral-900 cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#006CAA]/20 via-[#581C87]/20 to-[#2563EB]/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div className="relative z-10">
                 <div className="mb-6">
-                  <div className="relative w-16 h-16 flex items-center justify-center bg-gradient-to-r from-[#006CAA] via-[#581C87] to-[#2563EB] rounded-lg">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="text-3xl text-white"
-                    >
+                  <div className="relative w-14 h-14 flex items-center justify-center bg-neutral-800 rounded-lg transition-transform duration-500 group-hover:scale-110">
+                    <motion.div className="text-2xl text-[#14B8A6]">
                       {service.icon}
                     </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#006CAA] via-[#581C87] to-[#2563EB] rounded-lg opacity-0 group-hover:opacity-100 animate-spin-slow -z-10" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-white">
+                <h3 className="text-xl font-bold mb-4 text-white">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-4">
+                <p className="text-neutral-400 leading-relaxed mb-6 text-sm">
                   {service.description}
                 </p>
                 <Link
                   to="/services"
-                  className="relative group inline-flex items-center gap-2 px-4 py-2 rounded-full p-[2px] cursor-pointer bg-gradient-to-r from-[#006CAA]/40 via-[#581C87]/40 to-[#2563EB]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,108,170,0.35)] text-white font-medium"
+                  className="flex items-center text-xs font-semibold tracking-widest uppercase text-neutral-500 group-hover:text-[#14B8A6] transition-colors duration-500"
                 >
-                  Learn More <FiArrowRight className="text-lg" />
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-all duration-500">
+                    Learn More
+                  </span>
+                  <span className="ml-2 transform translate-x-0 group-hover:translate-x-3 transition-all duration-500 opacity-0 group-hover:opacity-100">
+                    &rarr;
+                  </span>
                 </Link>
               </div>
             </motion.div>
@@ -116,24 +116,10 @@ const WhatWeDo = () => {
         >
           <Link
             to="/services"
-            className="relative group inline-flex items-center justify-center rounded-full p-[2px] cursor-pointer bg-gradient-to-r from-[#006CAA]/40 via-[#581C87]/40 to-[#2563EB]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,108,170,0.35)]"
+            className="shiny-button inline-flex items-center gap-2 px-8 py-3 rounded-full text-white tracking-widest uppercase text-sm font-medium transition-all duration-300"
           >
-            <span className="relative inline-flex items-center gap-2 px-7 py-2 rounded-full bg-gradient-to-r from-[#006CAA]/40 via-[#581C87]/40 to-[#2563EB]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,108,170,0.35)]">
-              <span className="font-medium tracking-wide">
-                Explore Services
-              </span>
-              <FiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </span>
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              style={{
-                WebkitMask:
-                  "radial-gradient(120px 120px at 30% 30%, #000 20%, transparent 60%)",
-                background:
-                  "linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04), rgba(255,255,255,0.12))",
-              }}
-            />
+            <span>Explore Services</span>
+            <FiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </motion.div>
       </div>

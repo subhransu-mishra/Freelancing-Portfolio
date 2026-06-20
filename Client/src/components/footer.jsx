@@ -59,13 +59,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gray-900 text-gray-300 pt-24 overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-purple-700 opacity-10 blur-3xl"></div>
-        <div className="absolute bottom-40 right-20 w-40 h-40 rounded-full bg-blue-600 opacity-10 blur-3xl"></div>
-        <div className="absolute top-40 right-1/4 w-24 h-24 rounded-full bg-pink-600 opacity-10 blur-3xl"></div>
-      </div>
+    <footer className="relative bg-[#0B0B0C] text-neutral-400 pt-24 overflow-hidden border-t border-neutral-800">
+      {/* Animated Background Elements removed */}
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -73,8 +68,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
           {/* Logo and Brief */}
           <div className="lg:col-span-2">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <div className="mb-6 flex items-center gap-3">
+              <img src="/webnexity_logo.png" alt="WebNexity Logo" className="h-12 w-auto rounded object-contain" />
+              <h2 className="text-2xl font-bold text-white tracking-wide">
                 WebNexity
               </h2>
             </div>
@@ -116,7 +112,7 @@ export default function Footer() {
                         {link.name}
                       </span>
                       <span
-                        className={`absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ${
+                        className={`absolute left-0 bottom-0 w-0 h-0.5 bg-[#14B8A6] transition-all duration-300 ${
                           hoverLink === `main-${idx}` ? "w-full" : ""
                         }`}
                       ></span>
@@ -148,7 +144,7 @@ export default function Footer() {
                         {link.name}
                       </span>
                       <span
-                        className={`absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 ${
+                        className={`absolute left-0 bottom-0 w-0 h-0.5 bg-[#14B8A6] transition-all duration-300 ${
                           hoverLink === `service-${idx}` ? "w-full" : ""
                         }`}
                       ></span>
@@ -167,10 +163,9 @@ export default function Footer() {
         {/* Contact Section */}
 
         {/* CTA Banner */}
-        <div className="relative mt-12 mb-16 rounded-2xl bg-gradient-to-r from-gray-800 to-gray-900 overflow-hidden">
+        <div className="relative mt-12 mb-16 rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-purple-700 opacity-10 blur-3xl"></div>
-            <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-blue-600 opacity-10 blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/[0.02] to-transparent"></div>
           </div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between p-8 md:p-12">
@@ -184,13 +179,12 @@ export default function Footer() {
             </div>
             <Link
               to="/contact"
-              className="group relative bg-gray-800 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 overflow-hidden"
+              className="shiny-button group relative px-8 py-3 rounded-full font-medium flex items-center space-x-2 overflow-hidden transition-all duration-300 hover:scale-105"
             >
-              <span className="absolute inset-0 w-0 bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300 ease-out group-hover:w-full"></span>
-              <span className="relative">Get In Touch</span>
+              <span className="relative z-10 text-white text-sm tracking-widest uppercase">Get In Touch</span>
               <ArrowUpRight
                 size={18}
-                className="relative transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                className="relative z-10 text-white transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
               />
             </Link>
           </div>
@@ -228,7 +222,7 @@ export default function Footer() {
       {/* Back to Top Button */}
       <a
         href="#top"
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300 z-50 group shadow-lg"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-neutral-900 border border-neutral-800 rounded-full flex items-center justify-center text-neutral-400 hover:text-white transition-all duration-300 z-50 group shadow-lg hover:bg-neutral-800"
         aria-label="Back to top"
       >
         <svg

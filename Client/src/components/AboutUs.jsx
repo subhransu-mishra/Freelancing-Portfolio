@@ -123,7 +123,7 @@ function AboutUs() {
   return (
     <section
       id="about-us-section"
-      className="bg-black relative overflow-hidden py-20 md:py-32"
+      className="bg-[#0B0B0C] relative overflow-hidden py-20 md:py-32"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
@@ -138,30 +138,26 @@ function AboutUs() {
 
         {/* Floating icons background */}
         <motion.div
-          className="absolute top-20 left-10 opacity-5"
+          className="absolute top-20 left-10 opacity-10"
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         >
-          <FiCode className="w-24 h-24 text-blue-400" />
+          <FiCode className="w-24 h-24 text-neutral-600" />
         </motion.div>
         <motion.div
-          className="absolute top-40 right-20 opacity-5"
+          className="absolute top-40 right-20 opacity-10"
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         >
-          <FiServer className="w-32 h-32 text-purple-400" />
+          <FiServer className="w-32 h-32 text-neutral-700" />
         </motion.div>
         <motion.div
-          className="absolute bottom-20 left-1/4 opacity-5"
+          className="absolute bottom-20 left-1/4 opacity-10"
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         >
-          <FiSmartphone className="w-20 h-20 text-cyan-400" />
+          <FiSmartphone className="w-20 h-20 text-neutral-600" />
         </motion.div>
-
-        {/* Gradient orbs */}
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-purple-600 opacity-10 blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 rounded-full bg-blue-600 opacity-10 blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -175,7 +171,7 @@ function AboutUs() {
         >
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 relative inline-block">
             Who We Are
-            <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600"></span>
+            <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#14B8A6]"></span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-6">
             A dynamic tech agency of innovators, crafting cutting-edge digital
@@ -243,10 +239,10 @@ function AboutUs() {
             {/* Projects Counter */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-blue-900/50 to-indigo-900/50 border border-blue-500/20 rounded-lg p-6 backdrop-blur-sm"
+              className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-6 backdrop-blur-sm"
             >
-              <div className="bg-blue-500/20 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <FiTarget className="w-8 h-8 text-blue-400" />
+              <div className="bg-neutral-800 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <FiTarget className="w-8 h-8 text-[#14B8A6]" />
               </div>
               <h4 className="text-5xl font-bold text-white mb-2">
                 {counts.projects
@@ -261,18 +257,18 @@ function AboutUs() {
                       {digit}
                     </span>
                   ))}
-                <span className="text-blue-400">+</span>
+                <span className="text-[#14B8A6]">+</span>
               </h4>
-              <p className="text-gray-300">Completed Projects</p>
+              <p className="text-gray-400">Completed Projects</p>
             </motion.div>
 
             {/* Years Counter */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-purple-900/50 to-pink-900/50 border border-purple-500/20 rounded-lg p-6 backdrop-blur-sm"
+              className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-6 backdrop-blur-sm"
             >
-              <div className="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <FiCalendar className="w-8 h-8 text-purple-400" />
+              <div className="bg-neutral-800 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <FiCalendar className="w-8 h-8 text-[#14B8A6]" />
               </div>
               <h4 className="text-5xl font-bold text-white mb-2">
                 {counts.years
@@ -287,18 +283,18 @@ function AboutUs() {
                       {digit}
                     </span>
                   ))}
-                <span className="text-purple-400">+</span>
+                <span className="text-[#14B8A6]">+</span>
               </h4>
-              <p className="text-gray-300">Years Experience</p>
+              <p className="text-gray-400">Years Experience</p>
             </motion.div>
 
             {/* Clients Counter */}
             <motion.div
               variants={fadeInUp}
-              className="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 border border-cyan-500/20 rounded-lg p-6 backdrop-blur-sm md:col-span-2"
+              className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-6 backdrop-blur-sm md:col-span-2"
             >
-              <div className="bg-cyan-500/20 rounded-full w-16 h-16 flex items-center justify-center mb-4">
-                <FiAward className="w-8 h-8 text-cyan-400" />
+              <div className="bg-neutral-800 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+                <FiAward className="w-8 h-8 text-[#14B8A6]" />
               </div>
               <h4 className="text-5xl font-bold text-white mb-2">
                 {counts.clients
@@ -313,9 +309,9 @@ function AboutUs() {
                       {digit}
                     </span>
                   ))}
-                <span className="text-cyan-400">+</span>
+                <span className="text-[#14B8A6]">+</span>
               </h4>
-              <p className="text-gray-300">Successful Clients</p>
+              <p className="text-gray-400">Successful Clients</p>
             </motion.div>
           </motion.div>
         </div>
@@ -364,19 +360,19 @@ function AboutUs() {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 border border-blue-500/20 rounded-xl p-8 md:p-12 backdrop-blur-md">
+          <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-8 md:p-12 backdrop-blur-md">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Ready to Transform Your Digital Presence?
             </h3>
-            <p className="text-gray-300 max-w-2xl mx-auto mb-8">
+            <p className="text-gray-400 max-w-2xl mx-auto mb-8">
               Partner with us to build innovative, scalable, and user-centric
               digital solutions that drive growth and engagement.
             </p>
             <Link to="/contact">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="cursor-pointer bg-white text-black px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 shadow-lg shadow-purple-500/30"
+                className="shiny-button cursor-pointer text-white px-8 py-3 rounded-full text-sm tracking-widest uppercase font-medium transition-all duration-300"
               >
                 Start Your Project
               </motion.button>

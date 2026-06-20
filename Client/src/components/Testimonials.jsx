@@ -39,7 +39,7 @@ export const Testimonials = ({ testimonials = [], autoplay = false }) => {
   }
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-gray-900 to-black py-20 px-4">
+    <section className="relative min-h-screen bg-[#0B0B0C] py-20 px-4 border-t border-neutral-800">
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
 
       <div className="container mx-auto">
@@ -49,7 +49,7 @@ export const Testimonials = ({ testimonials = [], autoplay = false }) => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-wide">
             Client Testimonials
           </h2>
           <p className="text-gray-400 text-lg">What our clients say about us</p>
@@ -65,11 +65,11 @@ export const Testimonials = ({ testimonials = [], autoplay = false }) => {
               transition={{ duration: 0.3 }}
               className="relative"
             >
-              <div className="group relative p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="group relative p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-[#14B8A6]/50 transition-all duration-300">
+                <div className="absolute inset-0 bg-[#14B8A6]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative z-10">
-                  <FaQuoteLeft className="text-4xl text-purple-500/20 mb-6" />
+                  <FaQuoteLeft className="text-4xl text-[#14B8A6]/20 mb-6" />
 
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
@@ -91,7 +91,7 @@ export const Testimonials = ({ testimonials = [], autoplay = false }) => {
                       <h3 className="text-2xl font-bold text-white mb-1">
                         {testimonials[active].name}
                       </h3>
-                      <p className="text-purple-400 font-medium">
+                      <p className="text-[#14B8A6] font-medium tracking-wide">
                         {testimonials[active].designation}
                       </p>
                     </div>
@@ -99,13 +99,13 @@ export const Testimonials = ({ testimonials = [], autoplay = false }) => {
                     <div className="flex gap-4">
                       <button
                         onClick={handlePrev}
-                        className="group/button flex cursor-pointer h-12 w-12 items-center justify-center rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors duration-300"
+                        className="group/button flex cursor-pointer h-12 w-12 items-center justify-center rounded-full bg-neutral-800 hover:bg-[#14B8A6]/20 transition-colors duration-300"
                       >
                         <IconArrowLeft className="h-6 w-6 text-white transition-transform duration-300 group-hover/button:-translate-x-1" />
                       </button>
                       <button
                         onClick={handleNext}
-                        className="group/button flex cursor-pointer h-12 w-12 items-center justify-center rounded-full bg-gray-800 hover:bg-purple-500/20 transition-colors duration-300"
+                        className="group/button flex cursor-pointer h-12 w-12 items-center justify-center rounded-full bg-neutral-800 hover:bg-[#14B8A6]/20 transition-colors duration-300"
                       >
                         <IconArrowRight className="h-6 w-6 text-white transition-transform duration-300 group-hover/button:translate-x-1" />
                       </button>

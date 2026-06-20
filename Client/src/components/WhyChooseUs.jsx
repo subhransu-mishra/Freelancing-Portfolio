@@ -41,67 +41,66 @@ const WhyChooseUs = () => {
       title: "Tailored Solutions",
       description:
         "Custom-built software designed specifically for your business needs",
-      color: "from-purple-500 to-blue-500",
-      gradient: "from-purple-900/50 to-blue-900/50",
-      borderColor: "border-purple-500/20",
-      iconBg: "bg-purple-500/20",
-      iconColor: "text-purple-400",
-      bgGradient: "bg-gradient-to-br from-purple-900/50 to-blue-900/50",
-    },
-    {
-      icon: <FiTrendingUp className="w-6 h-6" />,
-      title: "Future-Proof Tech",
-      description: "Scalable architectures that grow with your business",
-      color: "from-green-500 to-cyan-500",
-      gradient: "from-green-900/50 to-cyan-900/50",
-      borderColor: "border-green-500/20",
-      iconBg: "bg-green-500/20",
-      iconColor: "text-green-400",
-      bgGradient: "bg-gradient-to-br from-green-900/50 to-cyan-900/50",
-    },
-    {
-      icon: <FiCreditCard className="w-6 h-6" />,
-      title: "Transparent Pricing",
-      description: "Competitive rates with no hidden costs",
-      color: "from-amber-500 to-orange-500",
-      gradient: "from-amber-900/50 to-orange-900/50",
-      borderColor: "border-amber-500/20",
-      iconBg: "bg-amber-500/20",
-      iconColor: "text-amber-400",
-      bgGradient: "bg-gradient-to-br from-amber-900/50 to-orange-900/50",
-    },
-    {
-      icon: <FiClock className="w-6 h-6" />,
-      title: "Quick Delivery",
-      description: "Agile development process ensuring timely delivery",
-      color: "from-rose-500 to-pink-500",
-      gradient: "from-rose-900/50 to-pink-900/50",
-      borderColor: "border-rose-500/20",
-      iconBg: "bg-rose-500/20",
-      iconColor: "text-rose-400",
-      bgGradient: "bg-gradient-to-br from-rose-900/50 to-pink-900/50",
+      color: "from-neutral-700 to-neutral-600",
+      borderColor: "border-neutral-800",
+      iconBg: "bg-neutral-800",
+      iconColor: "text-[#14B8A6]",
+      bgGradient: "bg-neutral-900/50",
     },
     {
       icon: <FiUsers className="w-6 h-6" />,
       title: "Expert Team",
-      description: "Seasoned developers with 10+ years average experience",
-      color: "from-indigo-500 to-blue-500",
-      gradient: "from-indigo-900/50 to-blue-900/50",
-      borderColor: "border-indigo-500/20",
-      iconBg: "bg-indigo-500/20",
-      iconColor: "text-indigo-400",
-      bgGradient: "bg-gradient-to-br from-indigo-900/50 to-blue-900/50",
+      description:
+        "Dedicated professionals with deep expertise in modern digital technologies",
+      color: "from-neutral-700 to-neutral-600",
+      borderColor: "border-neutral-800",
+      iconBg: "bg-neutral-800",
+      iconColor: "text-[#14B8A6]",
+      bgGradient: "bg-neutral-900/50",
+    },
+    {
+      icon: <FiTrendingUp className="w-6 h-6" />,
+      title: "Agile Process",
+      description:
+        "Iterative development approach ensuring rapid delivery and adaptability",
+      color: "from-neutral-700 to-neutral-600",
+      borderColor: "border-neutral-800",
+      iconBg: "bg-neutral-800",
+      iconColor: "text-[#14B8A6]",
+      bgGradient: "bg-neutral-900/50",
     },
     {
       icon: <FiCheckCircle className="w-6 h-6" />,
       title: "Quality Assurance",
-      description: "Rigorous testing protocols for flawless performance",
-      color: "from-emerald-500 to-teal-500",
-      gradient: "from-emerald-900/50 to-teal-900/50",
-      borderColor: "border-emerald-500/20",
-      iconBg: "bg-emerald-500/20",
-      iconColor: "text-emerald-400",
-      bgGradient: "bg-gradient-to-br from-emerald-900/50 to-teal-900/50",
+      description:
+        "Rigorous testing protocols to deliver robust and bug-free applications",
+      color: "from-neutral-700 to-neutral-600",
+      borderColor: "border-neutral-800",
+      iconBg: "bg-neutral-800",
+      iconColor: "text-[#14B8A6]",
+      bgGradient: "bg-neutral-900/50",
+    },
+    {
+      icon: <FiClock className="w-6 h-6" />,
+      title: "Timely Delivery",
+      description:
+        "Commitment to meeting deadlines without compromising on product quality",
+      color: "from-neutral-700 to-neutral-600",
+      borderColor: "border-neutral-800",
+      iconBg: "bg-neutral-800",
+      iconColor: "text-[#14B8A6]",
+      bgGradient: "bg-neutral-900/50",
+    },
+    {
+      icon: <FiCode className="w-6 h-6" />,
+      title: "Modern Tech Stack",
+      description:
+        "Utilizing the latest frameworks and tools for scalable architecture",
+      color: "from-neutral-700 to-neutral-600",
+      borderColor: "border-neutral-800",
+      iconBg: "bg-neutral-800",
+      iconColor: "text-[#14B8A6]",
+      bgGradient: "bg-neutral-900/50",
     },
   ];
 
@@ -118,7 +117,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <section className="relative py-20 px-4 lg:px-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
+    <section className="relative py-20 px-4 lg:px-0 bg-[#0B0B0C] overflow-hidden">
       {/* Background grid effect */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="w-full h-full grid grid-cols-12 grid-rows-12 ">
@@ -170,9 +169,7 @@ const WhyChooseUs = () => {
         style={{ top: "35%", left: "30%" }}
       />
 
-      {/* Glowing orbs */}
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-purple-600 opacity-10 blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-1/3 w-80 h-80 rounded-full bg-blue-600 opacity-10 blur-3xl"></div>
+      {/* Glowing orbs removed */}
 
       <div className="container mx-auto relative z-10">
         <motion.div
@@ -236,13 +233,11 @@ const WhyChooseUs = () => {
         >
           <Link to="/contact">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="cursor-pointer px-8 py-3.5 hover:bg-black bg-gradient-to-r from-[#006CAA]/40 via-[#581C87]/40 to-[#2563EB]/40 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,108,170,0.35)]  rounded-xl font-bold text-white shadow-lg shadow-purple-500/20 relative overflow-hidden group"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="shiny-button group px-8 py-3 transition-all duration-300 relative overflow-hidden"
             >
-              <span className="relative z-10">Start Your Project</span>
-              <div className="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 text-white font-medium text-sm tracking-widest uppercase">Start Your Project</span>
             </motion.button>
           </Link>
         </motion.div>

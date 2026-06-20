@@ -7,6 +7,7 @@ import {
   FaDatabase,
   FaCloud,
 } from "react-icons/fa";
+import RippleGrid from "./RippleGrid";
 import "./../styles/Hero.css";
 
 export default function HeroSection() {
@@ -21,43 +22,25 @@ export default function HeroSection() {
       className="relative min-h-screen overflow-hidden"
       style={{
         background:
-          "linear-gradient(145deg, rgb(0, 0, 0) 0%, rgb(22, 10, 39) 25%, rgb(27, 0, 51) 50%, rgb(0, 17, 33) 75%, rgb(0, 28, 42) 100%)",
+          "linear-gradient(145deg, #0B0B0C 0%, #121214 50%, #0B0B0C 100%)",
       }}
       id="home"
     >
       {/* Background grid effect */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <div className="w-full h-full grid grid-cols-12 grid-rows-12">
-          {Array.from({ length: 144 }).map((_, i) => (
-            <div key={i} className="border border-white/10"></div>
-          ))}
-        </div>
-      </div>
-
-      {/* Glowing orbs effect */}
-      <div
-        className="absolute top-20 right-20 w-96 h-96 rounded-full opacity-30 blur-3xl animate-pulse"
-        style={{
-          background:
-            "linear-gradient(225deg, rgba(147, 51, 234, 0.5) 0%, rgba(79, 70, 229, 0.5) 100%)",
-        }}
-      ></div>
-      <div
-        className="absolute -bottom-32 -left-32 w-[45rem] h-[45rem] rounded-full opacity-30 blur-3xl animate-pulse"
-        style={{
-          background:
-            "linear-gradient(225deg, rgba(0, 108, 170, 0.5) 0%, rgba(0, 106, 166, 0.5) 50%, rgba(0, 191, 255, 0.5) 100%)",
-          animationDelay: "1s",
-        }}
-      ></div>
-      <div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] rounded-full opacity-30 blur-3xl animate-pulse"
-        style={{
-          background:
-            "linear-gradient(225deg, rgba(88, 28, 135, 0.5) 0%, rgba(37, 99, 235, 0.5) 100%)",
-          animationDelay: "2s",
-        }}
-      ></div>
+      <RippleGrid
+        enableRainbow={false}
+        gridColor="#5227FF"
+        rippleIntensity={0.05}
+        gridSize={10}
+        gridThickness={15}
+        mouseInteraction
+        mouseInteractionRadius={0.8}
+        opacity={1}
+        fadeDistance={1.5}
+        vignetteStrength={2}
+        glowIntensity={0.1}
+        gridRotation={0}
+      />
 
       {/* Navbar moved to global Layout */}
 
@@ -86,29 +69,17 @@ export default function HeroSection() {
           digital era.
         </p>
 
-        {/* Transparent premium button with gradient ring and hover glow */}
         <motion.button
           onClick={handleGetStarted}
-          whileHover={{ scale: 1.04, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
-          whileTap={{ scale: 0.96 }}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
           style={{ animationDelay: "0.6s" }}
-          className="relative group inline-flex items-center justify-center rounded-full border-2 border-white/30 hover:border-white/50 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60"
+          className="shiny-button px-8 py-3.5 group inline-flex items-center justify-center cursor-pointer transition-all duration-300 focus:outline-none"
         >
-          <span className="relative inline-flex cursor-pointer items-center gap-2 px-7 py-2 rounded-full text-white text-sm">
-            <span className="font-medium tracking-wide">Get Started</span>
-            <FaRocket className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+          <span className="relative z-10 inline-flex items-center gap-2 text-white text-sm tracking-widest uppercase">
+            <span className="font-semibold text-white/90 group-hover:text-white transition-colors">Get Started</span>
+            <FaRocket className="w-4 h-4 text-white/70 group-hover:text-white transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
           </span>
-          {/* Subtle hover sheen without filling background */}
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            style={{
-              WebkitMask:
-                "radial-gradient(120px 120px at 30% 30%, #000 20%, transparent 60%)",
-              background:
-                "linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04), rgba(255,255,255,0.12))",
-            }}
-          />
         </motion.button>
       </div>
     </div>
