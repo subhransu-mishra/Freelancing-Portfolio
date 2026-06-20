@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import MultiOrbitSemiCircle from "../components/ui/multi-orbit-semi-circle";
 import { FaReact, FaNodeJs, FaCloud, FaMobileAlt } from "react-icons/fa";
@@ -31,7 +30,7 @@ const Pill = ({ children }) => (
 export default function Services() {
   void motion;
   return (
-    <Layout>
+    <>
       <SEO
         title="Professional Web Development & Design Services"
         description="Comprehensive web development, mobile app development, UI/UX design, and cloud deployment services. From concept to deployment, we deliver cutting-edge digital solutions."
@@ -413,6 +412,6 @@ export default function Services() {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 }

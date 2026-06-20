@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import { motion } from "framer-motion";
 import {
@@ -49,7 +48,7 @@ const processes = [
 
 export default function About() {
   return (
-    <Layout>
+    <>
       <SEO
         title="About Us - Expert Digital Solutions Team"
         description="Learn about WebNexity's expert team of developers, designers, and digital strategists. We bring years of experience in web development, UI/UX design, and cloud solutions."
@@ -217,6 +216,6 @@ export default function About() {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import { FiArrowRight, FiArrowLeft } from "react-icons/fi";
 
@@ -49,7 +48,7 @@ export default function Works() {
   const activeProject = projects[currentIndex];
 
   return (
-    <Layout>
+    <>
       <SEO
         title="Our Work - Featured Projects & Case Studies"
         description="Explore WebNexity's portfolio of successful web development, mobile app, and digital transformation projects."
@@ -180,6 +179,6 @@ export default function Works() {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 }
