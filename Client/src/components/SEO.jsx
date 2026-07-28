@@ -7,6 +7,7 @@ export default function SEO({
   ogImage = "https://webnexity.com/og-image.jpg",
   ogType = "website",
   route = "",
+  noIndex = false,
 }) {
   const siteName = "WebNexity";
   const siteUrl = "https://webnexity.com";
@@ -64,8 +65,9 @@ export default function SEO({
     setMetaTag("twitter:image", ogImage);
 
     // Additional SEO Meta Tags
-    setMetaTag("robots", "index, follow");
-    setMetaTag("googlebot", "index, follow");
+    const robotsContent = noIndex ? "noindex, nofollow" : "index, follow";
+    setMetaTag("robots", robotsContent);
+    setMetaTag("googlebot", robotsContent);
     setMetaTag("theme-color", "#4F46E5");
     setMetaTag("rating", "General");
     setMetaTag("revisit-after", "7 days");
@@ -93,7 +95,7 @@ export default function SEO({
     };
 
     let scriptTag = document.querySelector(
-      'script[type="application/ld+json"]'
+      'script[type="application/ld+json"]',
     );
     if (!scriptTag) {
       scriptTag = document.createElement("script");
@@ -101,7 +103,16 @@ export default function SEO({
       document.head.appendChild(scriptTag);
     }
     scriptTag.textContent = JSON.stringify(structuredData);
-  }, [title, description, keywords, ogImage, ogType, fullUrl, fullTitle]);
+  }, [
+    title,
+    description,
+    keywords,
+    ogImage,
+    ogType,
+    fullUrl,
+    fullTitle,
+    noIndex,
+  ]);
 
   return null;
 }

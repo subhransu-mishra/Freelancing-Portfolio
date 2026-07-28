@@ -32,7 +32,11 @@ export default function Navbar() {
                 to="/"
                 className="flex items-center pl-4 sm:pl-2 mobile-logo gap-3"
               >
-                <img src="/webnexity_logo.png" alt="WebNexity Logo" className="h-10 w-auto rounded object-contain" />
+                <img
+                  src="/webnexity_logo.png"
+                  alt="WebNexity Logo"
+                  className="h-10 w-auto rounded object-contain"
+                />
                 <span className="text-lg font-bold text-white tracking-wide">
                   WebNexity
                 </span>
@@ -43,6 +47,10 @@ export default function Navbar() {
                 <NavLink to="/about" title="About us" />
                 <NavLink to="/services" title="Services" />
                 <NavLink to="/works" title="How we works" />
+                <NavLink
+                  to="/career/verify-certificate"
+                  title="Verify Certificate"
+                />
               </div>
 
               {/* Desktop Action Button */}
@@ -115,6 +123,11 @@ export default function Navbar() {
             title="How we works"
             onClick={() => setMobileMenuOpen(false)}
           />
+          <NavLink
+            to="/career/verify-certificate"
+            title="Verify Certificate"
+            onClick={() => setMobileMenuOpen(false)}
+          />
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -143,13 +156,13 @@ function NavLink({ to, title, onClick }) {
       }
     >
       {title}
-        <span
-          className={({ isActive }) =>
-            `absolute bottom-0 left-0 w-0 h-0.5 bg-[#14B8A6] transition-all duration-300 group-hover:w-full ${
-              isActive ? "w-full" : ""
-            }`
-          }
-        ></span>
+      <span
+        className={({ isActive }) =>
+          `absolute bottom-0 left-0 w-0 h-0.5 bg-[#14B8A6] transition-all duration-300 group-hover:w-full ${
+            isActive ? "w-full" : ""
+          }`
+        }
+      ></span>
     </RouterNavLink>
   );
 }
