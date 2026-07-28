@@ -32,3 +32,22 @@ export async function saveCertificate(details) {
 
   return response.data;
 }
+
+export async function listCertificates(password) {
+  const response = await axios.post(
+    `${apiBaseUrl}/admin/certificates/list`,
+    { password },
+  );
+
+  return response.data;
+}
+
+export async function deleteCertificate(certificateNumber, password) {
+  const response = await axios.post(
+    `${apiBaseUrl}/admin/certificates/delete/${encodeURIComponent(certificateNumber)}`,
+    { password },
+  );
+
+  return response.data;
+}
+

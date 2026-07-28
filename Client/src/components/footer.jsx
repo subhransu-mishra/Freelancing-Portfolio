@@ -14,18 +14,7 @@ import {
 import { Link } from "react-router-dom";
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
   const [hoverLink, setHoverLink] = useState(null);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 3000);
-    }
-  };
 
   const mainLinks = [
     { name: "Home", href: "#home" },
@@ -34,6 +23,12 @@ export default function Footer() {
     { name: "Process", href: "#ourprocess" },
     { name: "About Us", href: "#about-us-section" },
     { name: "Contact", href: "#contact" },
+    {
+      name: "Certificate Admin",
+      href: "/career/verify-certificate/admin",
+      isRoute: true,
+      isAdmin: true,
+    },
   ];
 
   const serviceLinks = [
@@ -69,7 +64,11 @@ export default function Footer() {
           {/* Logo and Brief */}
           <div className="lg:col-span-2">
             <div className="mb-6 flex items-center gap-3">
-              <img src="/webnexity_logo.png" alt="WebNexity Logo" className="h-12 w-auto rounded object-contain" />
+              <img
+                src="/webnexity_logo.png"
+                alt="WebNexity Logo"
+                className="h-12 w-auto rounded object-contain"
+              />
               <h2 className="text-2xl font-bold text-white tracking-wide">
                 WebNexity
               </h2>
@@ -101,31 +100,65 @@ export default function Footer() {
             <ul className="space-y-3">
               {mainLinks.map((link, idx) => (
                 <li key={idx}>
-                  <a
-                    href={link.href}
-                    className="group flex items-center text-gray-400 hover:text-white transition-colors duration-300"
-                    onMouseEnter={() => setHoverLink(`main-${idx}`)}
-                    onMouseLeave={() => setHoverLink(null)}
-                  >
-                    <span className="relative overflow-hidden">
-                      <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
-                        {link.name}
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className={`group flex items-center transition-colors duration-300 ${
+                        link.isAdmin
+                          ? "text-[#14B8A6] font-medium hover:text-[#0dd2bc]"
+                          : "text-gray-400 hover:text-white"
+                      }`}
+                      onMouseEnter={() => setHoverLink(`main-${idx}`)}
+                      onMouseLeave={() => setHoverLink(null)}
+                    >
+                      <span className="relative overflow-hidden flex items-center gap-2">
+                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
+                          {link.name}
+                        </span>
+                        {link.isAdmin && (
+                          <span className="rounded bg-[#14B8A6]/20 border border-[#14B8A6]/40 px-1.5 py-0.5 text-[10px] uppercase font-bold tracking-wider text-[#14B8A6]">
+                            Admin
+                          </span>
+                        )}
+                        <span
+                          className={`absolute left-0 bottom-0 w-0 h-0.5 bg-[#14B8A6] transition-all duration-300 ${
+                            hoverLink === `main-${idx}` ? "w-full" : ""
+                          }`}
+                        ></span>
                       </span>
-                      <span
-                        className={`absolute left-0 bottom-0 w-0 h-0.5 bg-[#14B8A6] transition-all duration-300 ${
-                          hoverLink === `main-${idx}` ? "w-full" : ""
-                        }`}
-                      ></span>
-                    </span>
-                    <ChevronRight
-                      size={16}
-                      className="ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1"
-                    />
-                  </a>
+                      <ChevronRight
+                        size={16}
+                        className="ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1"
+                      />
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="group flex items-center text-gray-400 hover:text-white transition-colors duration-300"
+                      onMouseEnter={() => setHoverLink(`main-${idx}`)}
+                      onMouseLeave={() => setHoverLink(null)}
+                    >
+                      <span className="relative overflow-hidden">
+                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
+                          {link.name}
+                        </span>
+                        <span
+                          className={`absolute left-0 bottom-0 w-0 h-0.5 bg-[#14B8A6] transition-all duration-300 ${
+                            hoverLink === `main-${idx}` ? "w-full" : ""
+                          }`}
+                        ></span>
+                      </span>
+                      <ChevronRight
+                        size={16}
+                        className="ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1"
+                      />
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
+
 
           {/* Services */}
           <div className="lg:col-span-1">
