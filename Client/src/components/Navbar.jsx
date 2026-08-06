@@ -128,16 +128,18 @@ export default function Navbar() {
             title="Verify Certificate"
             onClick={() => setMobileMenuOpen(false)}
           />
-          <motion.button
+          <Link to="https://wa.me/919853779652?text=Hi%20WebNexity%2C%20I%27d%20like%20to%20discuss%20a%20project.">
+            <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="shiny-button group text-white px-8 py-3 transition-all duration-300 flex items-center"
-          >
-            <span className="relative z-10 flex items-center text-sm font-medium tracking-wide">
-              <span className="mr-2">Let's Build</span>
-              <FaRocket className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-            </span>
-          </motion.button>
+            >
+              <span className="relative z-10 flex items-center text-sm font-medium tracking-wide">
+                <span className="mr-2">Let's Build</span>
+                <FaRocket className="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              </span>
+            </motion.button>
+          </Link>
         </div>
       </div>
     </>
